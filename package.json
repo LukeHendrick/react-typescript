@@ -1,0 +1,33 @@
+{
+  "name": "react-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "webpack": "^4.41.6"
+  },
+  "devDependencies": {
+    "fork-ts-checker-webpack-plugin": "^4.0.4",
+    "serverless-deployment-bucket": "^1.1.0",
+    "serverless-iam-roles-per-function": "^2.0.2",
+    "serverless-plugin-typescript": "^1.1.9",
+    "serverless-pseudo-parameters": "^2.5.0",
+    "serverless-webpack": "^5.3.1",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LukeHendrick/react-typescript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LukeHendrick/react-typescript/issues"
+  },
+  "homepage": "https://github.com/LukeHendrick/react-typescript#readme"
+}

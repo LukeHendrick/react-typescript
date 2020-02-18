@@ -1,0 +1,7 @@
+cognitoDomain: react-starter
+identityProviderName: "COGNITO"
+webDomain: http://localhost:3000
+webAppBucket: react-starter-lh
+samlAuth: false
+feature: ''
+cognitoAdminGroup: 'Admin'

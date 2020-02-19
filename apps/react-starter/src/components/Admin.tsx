@@ -6,12 +6,13 @@ type Props = {
     history: any
 }
 const Admin: React.FC<Props & RouteProps> = ({state, dispatch, history}: Props) => {
-
     return (
         <>
         { state.isAdmin 
         ? 
+            <>
                 <h1>Admin</h1>
+            </>
         : 
                 <>{history.push('/')}</>
         }

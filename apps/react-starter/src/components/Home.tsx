@@ -1,6 +1,5 @@
 import React from 'react'
 import { RouteProps } from 'react-router-dom';
-
 type Props = {
     state?: any
     dispatch?: any

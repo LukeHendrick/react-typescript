@@ -22,9 +22,10 @@ const AuthWrapper: React.FC<Props> = ({state, dispatch, children}: Props) => {
     const [show, setShow] = useState()
     useEffect(() => {
         const asyncWrap = async () => {
+          const Authorizer = new AuthUtil()
           if (state.authState === "unauthenticated") {
             setShow(false)
-            const Authorizer = new AuthUtil()
+            
             const isAuth = await Authorizer.isAuthenticated();
             if (isAuth) {
               setShow(true)
@@ -37,6 +38,7 @@ const AuthWrapper: React.FC<Props> = ({state, dispatch, children}: Props) => {
               Authorizer.initAuth()
             }
           } else {
+            Authorizer.getCreds()
             setShow(true);
           }
         }

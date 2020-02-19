@@ -107,7 +107,7 @@ export class AuthUtil {
                     Logins
                 })
                 if (cogCreds.expired) {
-                    cogCreds.refreshPromise();
+                    cogCreds.refreshPromise().then(() => {}).catch(err => console.log(err));
                 }
                 AWS.config.credentials = cogCreds;
             })

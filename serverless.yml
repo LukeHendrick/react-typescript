@@ -26,9 +26,9 @@ custom:
   cognitoDomain: ${self:provider.config.cognitoDomain}
   webAppConfig:
     screen-share:
-      webAppEntryPoint: ./apps/react-starter/
+      webAppEntryPoint: apps/react-starter
       webAppDeploymentBucket: ${self:provider.config.webAppBucket}
-      framework: React
+      framework: react
 
 functions:
   hello:

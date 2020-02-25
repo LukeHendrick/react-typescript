@@ -1,10 +1,9 @@
 import React from "react";
 import { Box } from "grommet";
-import { Route, RouteProps } from "react-router-dom";
-import {AuthUtil} from '../utils/auth';
+import { Route } from "react-router-dom";
+import { Route as routeType } from '../state/types';
+import { routes } from '../state/routes';
 import { actionType } from '../state/types';
-import Home from "./Home";
-import Admin from "./Admin";
 
 type Props = {
   state?: any
@@ -14,13 +13,9 @@ type Props = {
 const Main: React.FC<Props> = ({state, dispatch}: Props) => {
   return (
     <Box align="center" gridArea="main">
-      <Route path="/" exact render={(props) => <Home {...props} />} />
-      <Route path="/admin" exact render={(props) => <Admin state={state} dispatch={dispatch} {...props}/>} />
-      <Route path="/signout" exact render={() => {
-        const Auth = new AuthUtil();
-        Auth.signOut()
-        return null
-      }} />
+      {routes.map((route: routeType, i: number) => (
+        <Route path={route.href} exact render={(props) => route.render(props, state, dispatch)} />
+      ))}
     </Box>
   );
 };

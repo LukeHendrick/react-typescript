@@ -1,6 +1,7 @@
-export interface NavItem {
+export interface Route {
   href: string;
   text: string;
+  render: (props: any, state?: any, dispatch?: any) => any;
 }
 
 export type User = {
@@ -17,6 +18,12 @@ export interface stateTypes {
 }
 
 export interface actionType {
-  type: "setAuthState" | "setUser" | "setSession" | "setCredentials" | "setIsAdmin";
+  type:
+    | "setAuthState"
+    | "setUser"
+    | "setSession"
+    | "setCredentials"
+    | "setIsAdmin";
   value: any;
+  component: "auth";
 }

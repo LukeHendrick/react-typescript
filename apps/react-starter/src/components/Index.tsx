@@ -1,5 +1,5 @@
 import React, {useReducer} from "react";
-import { appReducer, initState, initReducer } from '../state/reducer'
+import { appReducer, initState, initReducer } from '../state/appReducer'
 import { Grid } from "grommet";
 import Head from "./Head";
 import Main from "./Main";

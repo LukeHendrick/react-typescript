@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import { AuthUtil } from '../utils/auth'
 import { Box, Heading } from 'grommet'
+import { actionType, stateTypes } from '../state/types'
 
 type Props = {
-    state?: any
-    dispatch?: any
+    state: stateTypes
+    dispatch: React.Dispatch<actionType>
     children?: any
 }
 
@@ -29,10 +30,10 @@ const AuthWrapper: React.FC<Props> = ({state, dispatch, children}: Props) => {
             const isAuth = await Authorizer.isAuthenticated();
             if (isAuth) {
               setShow(true)
-              dispatch({type: 'setAuthState', value: 'authenticated'})
+              dispatch({component: "auth", type: 'setAuthState', value: 'authenticated'})
               const isAdmin = await Authorizer.isAdmin();
               if (isAdmin) {
-                dispatch({type: 'setIsAdmin', value: true})
+                dispatch({component: "auth", type: 'setIsAdmin', value: true})
               }
             } else {
               Authorizer.initAuth()

@@ -1,26 +1,8 @@
-import { stateTypes, actionType } from "./types";
+import { copyState } from "../utils/reducerUtils";
+import { stateTypes, actionType } from "../state/types";
 
-export const initState: stateTypes = {
-  authState: "unauthenticated",
-  user: null,
-  session: null,
-  credentials: null,
-  isAdmin: false,
-};
-
-export const initReducer = (state: stateTypes = initState) => {
-  return state;
-};
-
-const copyState = (state: stateTypes) => {
-  return JSON.parse(JSON.stringify(state));
-};
-
-export const appReducer = (
-  state: stateTypes,
-  action: actionType
-): stateTypes => {
-  let newState = copyState(state);
+export const authReducer = (state: stateTypes, action: actionType) => {
+  const newState = copyState(state);
   switch (action.type) {
     case "setAuthState":
       newState.authState = action.value;
